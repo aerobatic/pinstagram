@@ -3,10 +3,10 @@
  *
  * @type {angular.Module}
  */
-define(['angular', 'angular-route', 'asset!libs/angular-isotope', 'asset!js/aerobatic-angular', 'asset!js/services/instagram'], function(angular) {
+define(['angular', 'angular-route', 'asset!js/aerobatic-angular', 'asset!js/services/instagram'], function(angular) {
   'use strict';
 
-  var app = angular.module('nstagram', ['ngRoute', 'nstagram-services', 'aerobatic', 'iso.directives']);
+  var app = angular.module('nstagram', ['ngRoute', 'nstagram-services', 'aerobatic']);
 
   // Declare all the top level dependencies our app requires
   var dependencies = [
@@ -14,10 +14,12 @@ define(['angular', 'angular-route', 'asset!libs/angular-isotope', 'asset!js/aero
     'asset!js/controllers/searchCtrl',
     'asset!partials/search',
     'asset!js/controllers/detailCtrl',
-    'asset!partials/detail'
+    'asset!partials/detail',
+    'asset!js/controllers/boardListCtrl',
+    'asset!partials/boards'
   ];
 
-  require(dependencies, function(layout, searchCtrl, searchView, detailCtrl, detailView) {
+  require(dependencies, function(layout, searchCtrl, searchView, detailCtrl, detailView, boardListCtrl, boardListView) {
     app.config(['$routeProvider', function ($routeProvider) {
       $routeProvider.when('/', {
         controller: searchCtrl,
@@ -25,6 +27,9 @@ define(['angular', 'angular-route', 'asset!libs/angular-isotope', 'asset!js/aero
       }).when('/:id', {
         controller: detailCtrl,
         template: detailView
+      }).when('/boards', {
+        controller: boardListCtrl,
+        template: boardListView
       }).otherwise({
         redirectTo: '/'
       });
