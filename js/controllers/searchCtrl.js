@@ -1,9 +1,8 @@
 define(['angular', 'jquery'], function(angular) {
 	function SearchCtrl($scope, $location, $log, instagram) {
 		'use strict';
-
-	 	instagram.popularMedia().success(function(data) {
-       $scope.currentMedia = data.data;
+    instagram.popularMedia().success(function(data) {
+      $scope.currentMedia = data.data;
     });
 
 		$scope.$on('search', function(e, args) {
@@ -22,9 +21,14 @@ define(['angular', 'jquery'], function(angular) {
 			}
 		});
 
-    $scope.addBoard = function() {
-      console.log("Hovered")
+    $scope.hoverBoard = function(media) {
+      $log.debug("hovered over " + JSON.stringify(media));
+      $scope.hoveredMedia = media;
     };
+
+    $scope.clearHovered = function (){
+      $scope.hoveredMedia = undefined;
+    }
   };
 
 	SearchCtrl.$inject = ['$scope', '$location', '$log', 'instagram'];
