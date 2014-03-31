@@ -17,16 +17,16 @@ define(['angular'], function(angular) {
       },
       hashtagMedia: function(hashtag) {
         $log.debug("hashtag search for " + hashtag);
-		return $http.jsonp("https://api.instagram.com/v1/tags/" + hashtag + "/media/recent", {params: params});
+        return $http.jsonp("https://api.instagram.com/v1/tags/" + hashtag + "/media/recent", {params: params});
       },
       geoMedia: function(city) {
-	    // our supported cities
-		var coords = {"Seattle":       {lat: 47.60 , lon: -122.33},
-		              "San Francisco": {lat: 37.77 , lon: -122.41},
-					  "New York":      {lat: 40.71 , lon: -74.00}};
-		var cityCoords = coords[city];
+        // our supported cities
+        var coords = {"Seattle":       {lat: 47.60 , lon: -122.33},
+                      "San Francisco": {lat: 37.77 , lon: -122.41},
+                      "New York":      {lat: 40.71 , lon: -74.00}};
+        var cityCoords = coords[city];
         return $http.jsonp("https://api.instagram.com/v1/media/search?lat=" + cityCoords.lat + "&lng=" + cityCoords.lon + "&access_token=ACCESS-TOKEN", 
-		                   {params: params});
+                          {params: params});
       }	  
     }
   }]);
