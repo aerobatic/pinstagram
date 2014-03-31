@@ -1,5 +1,12 @@
 *
   border-radius: 0 !important;
+  outline: none;
+  box-shadow:none !important;
+
+button:focus
+  border-radius: 0 !important;
+  outline: none;
+  box-shadow:none !important;
 
 .ig-item
   max-width: 350px;
@@ -29,6 +36,10 @@
 .search-form
   margin-top: 30px
 
+  button
+    width: 40px
+    height: 40px
+
   .input-group
     width: 300px
     margin-left: 8px
@@ -50,10 +61,37 @@
 
   button.search-type
     background-color: gray
-    width: 40px
-    height: 40px
 
   button.search-type.active
     background-color: #88d1a5
 
+  .city-select
+    width: 300px
 
+    button.city
+      width: 253px
+      text-align: left
+      margin-left: 8px
+      border: solid 2px #88d1a5
+
+    button.city:hover
+      background-color: #FFF
+      border: solid 2px #88d1a5
+
+    button.dropdown-toggle
+      border: solid 2px #88d1a5
+      border-left-width: 0
+
+    button.dropdown-toggle:active
+      background-color: #FFF
+
+.navbar
+  p.username
+    margin-top: 30px
+
+  img.logo
+    margin-top:15px
+    margin-bottom: 15px
+
+#main
+  margin-top: 180px
