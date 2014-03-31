@@ -3,25 +3,32 @@ define(['angular', 'jquery'], function(angular){
     'use strict';
 
     instagram.popularMedia().success(function(data) {
-      $scope.popularMedia = data.data;
+      $scope.currentMedia = data.data;
     });
 
     $scope.$on('search', function(e, args){
       $log.info("Search for hashtag " + args.term);
 
-      if (args.type == 'hashtag'){
-        $scope.$apply(function() {
-          instagram.hashtagMedia(args.term).success(function(data) {			
-            $scope.searchResults = data.data;
-          })
-        });
-      }
+    if (args.type == 'hashtag'){
+      instagram.hashtagMedia(args.term).success(function(data) {			
+        $scope.currentMedia = data.data;
+      })
+    }
+    else if (args.type == 'geo'){
+      instagram.geoMedia(args.term).success(function(data) {			
+      $scope.currentMedia = data.data;
+    })
+    }
     });	
-	
-    $scope.addToBoard = function() {
-      console.log("Hovered")
+
+    $scope.hoverBoard = function(media) {
+      $log.debug("hovered over " + JSON.stringify(media));
+      $scope.hoveredMedia = media;
     };
-   
+
+    $scope.clearHovered = function (){
+      $scope.hoveredMedia = undefined;
+    }
   };
 
   SearchCtrl.$inject = ['$scope', '$location', '$log', 'instagram'];
