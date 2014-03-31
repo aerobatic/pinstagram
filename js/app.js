@@ -10,16 +10,17 @@ define(['angular', 'angular-route', 'asset!js/aerobatic-angular', 'asset!js/serv
 
   // Declare all the top level dependencies our app requires
   var dependencies = [
+    'asset!js/controllers/globalCtrl',
     'asset!partials/layout',
     'asset!js/controllers/searchCtrl',
     'asset!partials/search',
     'asset!js/controllers/detailCtrl',
-    'asset!partials/detail',
-    'asset!js/controllers/boardListCtrl',
-    'asset!partials/boards'
+    'asset!partials/detail'
   ];
 
-  require(dependencies, function(layout, searchCtrl, searchView, detailCtrl, detailView, boardListCtrl, boardListView) {
+  require(dependencies, function(globalCtrl, layout, searchCtrl, searchView, detailCtrl, detailView) {
+    app.controller('GlobalCtrl', globalCtrl);
+
     app.config(['$routeProvider', function ($routeProvider) {
       $routeProvider.when('/', {
         controller: searchCtrl,
@@ -27,9 +28,6 @@ define(['angular', 'angular-route', 'asset!js/aerobatic-angular', 'asset!js/serv
       }).when('/:id', {
         controller: detailCtrl,
         template: detailView
-      }).when('/boards', {
-        controller: boardListCtrl,
-        template: boardListView
       }).otherwise({
         redirectTo: '/'
       });
