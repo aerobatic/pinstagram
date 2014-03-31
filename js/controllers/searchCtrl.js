@@ -7,13 +7,17 @@ define(['angular', 'jquery', 'jquery-isotope'], function(angular){
       $scope.popularMedia = data.data;
     });
 
-    var container = $('#container');
-    container.isotope({
-      // options
-      itemSelector: '.item',
-      layoutMode: 'fitRows'
-    });
 
+    $scope.$watch($scope.popularMedia, function() {
+      var $container = $('#container');
+      $container.imagesLoaded( function() {
+          // initialize
+          $container.masonry({
+          columnWidth: 200,
+          itemSelector: '.item'
+        });
+      });
+    });
   };
 
   SearchCtrl.$inject = ['$scope', '$location', 'instagram'];
