@@ -2,12 +2,32 @@
 <div>
   <link type="text/css" rel="Stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
   <link type="text/css" rel="Stylesheet" asset-url="css/app" />
-
-  <section id="header">
-    <h3>Nstagram</h3>
-    Search box
-    Profile
-  </section>
-
+   <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="../" class="navbar-brand"><img id="logo" src="https://dl-web.dropbox.com/get/Innovation%20Team/hackathon%203.31.14/design/visual_assets/nstagram_logo.png?_subject_uid=29000566&w=AACRssFSbInmy831SmwbaUceN8OgNFWc3Q9ibNB-K-nDsg"/></a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li>
+          <input type="text" value="Search"/>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>Logged in as</li>
+        <li>Username</li>
+      </ul>
+    </nav>
+  </div>
+</header>
   <section id="main" ng-view></section>
+
+
+  
 </div>
