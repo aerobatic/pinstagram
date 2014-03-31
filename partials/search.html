@@ -1,8 +1,16 @@
-<div>
-  <h1>Popular Media</h1>
+<div id="search-results">
   <div class="container" id="main">
     <span ng:repeat="(index, media) in currentMedia">
-      <img ng-src="{{media.images.standard_resolution.url}}" class="ig-item"/><br ng:show="(index+1)%3==0" />
+      <div class="ig-item">
+        <img ng-src="{{media.images.standard_resolution.url}}" class="ig-item" ng-mouseover="hoverBoard(media)" ng-mouseout="clearHovered()" ngram-add-board="media.id"/>
+<!--         <br ng-show="(index+1)%3==0"/>
+ -->       
+<!--          <span class="ig-item-info" ng-show="hoveredMedia.id == media.id">
+ -->         <span class="ig-item-info" >
+          <img ng-src="{{ media.user.profile_picture }}" class="ig-item-user-img"/> {{ media.user.username }} <i class="fa fa-heart"></i> {{ media.likes.count }}<br/>
+      
+        </span>
+      </div>
     </span>
   </div>
 </div>
