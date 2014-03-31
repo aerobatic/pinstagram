@@ -1,9 +1,7 @@
 <div>
-  <h1>Popular Media</h1>
-  <ul>
-    <li ng-repeat="media in popularMedia" isotope-item>
-      <img ng-src="{{media.images.thumbnail.url}}">
-    </img>
-    </li>
-  </ul>
+  <div class="container" id="main">
+      <div ng-repeat="media in popularMedia" class="item img-responsive col-sm-3">
+        <img ng-src="{{media.images.standard_resolution.url}}"/>
+      </div>
+  </div>
 </div>
