@@ -15,7 +15,21 @@
           <button type="button" class="btn btn-default search-type" ng-class="{active:searchType=='geo'}" ng-click="searchType='geo'">Geo</button>
           <button type="button" class="btn btn-default search-type" ng-class="{active:searchType=='hashtag'}" ng-click="searchType='hashtag'">Hashtag</button>
           <div class="form-group">
-            <div class="input-group">
+            <div class="btn-group city-select" ng-show="searchType=='geo'">
+              <button type="button" class="btn btn-default city">{{searchCity}}</button>
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Seattle</a></li>
+                <li><a href="#">Los Angeles</a></li>
+                <li><a href="#">New York</a></li>
+                <li><a href="#">San Francisco</a></li>
+                <li><a href="#">Miami</a></li>
+              </ul>
+            </div>
+            <div class="input-group" ng-show="searchType=='hashtag'">
               <input type="text" class="form-control" ng-model="searchTerm" placeholder="{{searchType=='hashtag' ? 'search by hashtag' : 'search by geotag'}}">
               <span class="input-group-btn">
                 <button class="btn btn-default" type="submit">
