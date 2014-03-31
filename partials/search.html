@@ -1,7 +1,7 @@
 <div>
   <h1>Popular Media</h1>
-  <ul>
-    <li ng-repeat="media in popularMedia" isotope-item>
+  <ul isotope-container>
+    <li ng-repeat="media in popularMedia" isotope-item ng-cloak class="ng-cloak">
       <img ng-src="{{media.images.thumbnail.url}}">
     </img>
     </li>
