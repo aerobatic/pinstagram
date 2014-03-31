@@ -3,7 +3,7 @@ define(['angular', 'jquery'], function(angular){
     'use strict';
 
     instagram.popularMedia().success(function(data) {
-      $scope.popularMedia = data.data;
+      $scope.currentMedia = data.data;
     });
 
     $scope.$on('search', function(e, args){
