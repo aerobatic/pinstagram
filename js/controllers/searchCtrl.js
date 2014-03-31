@@ -1,16 +1,18 @@
 
 define(['angular'], function(angular){
-  function IndexCtrl($scope, $location, Thing) {
+  function SearchCtrl($scope, $location, instagram) {
     'use strict';
 
-    $scope.things = Thing.list();
+    instagram.popularMedia().success(function(data) {
+      $scope.popularMedia = data.data;
+    });
 
-    $scope.loadThing = function(id, $event) {
-      $location.path(id);
-      $event.preventDefault();
-    }
+    // $scope.loadThing = function(id, $event) {
+    //   $location.path(id);
+    //   $event.preventDefault();
+    // }
   };
 
-  IndexCtrl.$inject = ['$scope', '$location', 'Thing'];
-  return IndexCtrl;
+  SearchCtrl.$inject = ['$scope', '$location', 'instagram'];
+  return SearchCtrl;
 });

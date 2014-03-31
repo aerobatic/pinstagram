@@ -1,8 +1,8 @@
 <div>
-  <h1>List of Things</h1>
+  <h1>Popular Media</h1>
   <ul>
-    <li ng-repeat="thing in things">
-      <a href="#" ng-click="loadThing(thing.id, $event)">{{thing.name}}</a>
+    <li ng-repeat="media in popularMedia">
+      <img ng-src="{{media.images.thumbnail.url}}"></img>
     </li>
   </ul>
 </div>
