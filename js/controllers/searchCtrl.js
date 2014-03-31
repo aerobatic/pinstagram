@@ -3,7 +3,7 @@ define(['angular'], function(angular){
   function IndexCtrl($scope, $location, Thing) {
     'use strict';
 
-    $scope.things = Thing.list();
+    $scope.boards = Thing.list();
 
     $scope.loadThing = function(id, $event) {
       $location.path(id);

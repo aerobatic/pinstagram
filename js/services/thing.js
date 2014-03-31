@@ -10,27 +10,61 @@ define(['angular'], function(angular) {
   // });
 
   angular.module('seedServices', []).factory('Thing', [function() {
-    var things = [
-      {
-        id: '1',
-        name: "Thing1",
-        photo: "thing1.jpg"
-      },
-      {
-        id: '2',
-        name: "Thing2",
-        photo: "thing2.jpg"
-      }
-    ];
+    var board1 = {
+      "id":1,
+      "name":"Kate Spade",
+      "poster_image_url":"foo",
+      "lastUpdate":"foo",
+      "media": [
+       {
+        "thumbnail_url":"foo",
+        "instagram_id":"foo",
+        "medium_url":"foo"
+      }]
+    };
 
+    var board2 = 
+    {
+      "id":2,
+      "name": "My Cool Fashion",
+      "lastUpdate":"",
+      "media": [
+       {
+        "thumbnail_url":"",
+        "instagram_id":"",
+        "medium_url":""
+      }]
+    };
+
+    var board3 = {
+      "id":3,
+      "name": "My Cool Fashion",
+      "poster_image_url":"",
+      "lastUpdate":"",
+      "media": [
+       {
+        "thumbnail_url":"",
+        "instagram_id":"",
+        "medium_url":""
+      }]
+    };
+
+    var boards = [board1,board2,board3];
+
+    var user = {
+      "name":"jonmadison",
+      "boards":boards
+    };
+    
     return {
       list: function() {
-        return things;
+        console.log("using boards: " + JSON.stringify(boards));
+        return boards;
       },
       find: function(id) {
-        for (var i=0; i<things.length; i++) {
-          if (things[i].id == id)
-            return things[i];
+        for (var i=0; i<boards.length; i++) {
+          if (boards[i].id == id)
+            return boards[i];
         }
         return null;
       }
