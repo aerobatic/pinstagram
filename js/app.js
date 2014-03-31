@@ -3,7 +3,7 @@
  *
  * @type {angular.Module}
  */
-define(['angular', 'angular-route', 'asset!libs/imagesloaded.pkgd.min', 'asset!libs/masonry.pkgd.min', 'asset!js/aerobatic-angular', 'asset!js/services/instagram'], function(angular) {
+define(['angular', 'angular-route', 'asset!js/aerobatic-angular', 'asset!js/services/instagram'], function(angular) {
   'use strict';
 
   var app = angular.module('nstagram', ['ngRoute', 'nstagram-services', 'aerobatic']);
