@@ -1,9 +1,10 @@
 
-define(['angular'], function(angular){
+define(['angular', 'angular-bootstrap'], function(angular){
   function GlobalCtrl($scope, $rootScope, $location, aerobatic) {
     'use strict';
 
     $scope.username = aerobatic.config.user.username;
+    $scope.profilePicture = aerobatic.config.user._json.data.profile_picture;
     $scope.searchType = 'hashtag';
     $scope.searchTerm = '';
     $scope.searchCity = 'New York';
