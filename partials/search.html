@@ -1,16 +1,14 @@
 <div id="search-results">
   <div class="container" id="main">
-    <span ng:repeat="(index, media) in currentMedia">
+    <span ng-repeat="(index, media) in currentMedia">
       <div class="ig-item">
-        <img ng-src="{{media.images.standard_resolution.url}}" class="ig-item" ng-mouseover="hoverBoard(media)" ng-mouseout="clearHovered()" ngram-add-board="media.id"/>
-<!--         <br ng-show="(index+1)%3==0"/>
- -->       
-<!--          <span class="ig-item-info" ng-show="hoveredMedia.id == media.id">
- -->         <span class="ig-item-info" >
-          <img ng-src="{{ media.user.profile_picture }}" class="ig-item-user-img"/> {{ media.user.username }} <i class="fa fa-heart"></i> {{ media.likes.count }}<br/>
-      
+        <img ng-src="{{media.images.standard_resolution.url}}" class="ig-item" ng-mouseover="hoverBoard(media)" ngram-add-board="media.id"/>
+       
+         <span class="ig-item-info" ng-show="hoveredMedia.id == media.id">
+          <img ng-src="{{ media.user.profile_picture }}" class="ig-item-user-img"/> {{ media.user.username }} <i class="fa fa-heart"></i> {{ media.likes.count }}
         </span>
       </div>
+      <br ng-show="(index+1)%3==0"/>
     </span>
   </div>
 </div>
