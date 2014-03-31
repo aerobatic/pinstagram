@@ -1,16 +1,12 @@
 
 define(['angular'], function(angular){
-  function IndexCtrl($scope, $location, Thing) {
+  function SearchCtrl($scope, $location, instagram) {
     'use strict';
-
-    $scope.boards = Thing.list();
-
-    $scope.loadThing = function(id, $event) {
-      $location.path(id);
-      $event.preventDefault();
-    }
+    instagram.popularMedia().success(function(data) {
+      $scope.popularMedia = data.data;
+    });
   };
 
-  IndexCtrl.$inject = ['$scope', '$location', 'Thing'];
-  return IndexCtrl;
+  SearchCtrl.$inject = ['$scope', '$location', 'instagram'];
+  return SearchCtrl;
 });

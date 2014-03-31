@@ -1,8 +1,9 @@
 <div>
-  <h1>Search</h1>
+  <h1>Popular Media</h1>
   <ul>
-    <li ng-repeat="board in boards" isotope-item>
-      <div class="name">{{board.name}}</div>
+    <li ng-repeat="media in popularMedia" isotope-item>
+      <img ng-src="{{media.images.thumbnail.url}}">
+    </img>
     </li>
   </ul>
 </div>
