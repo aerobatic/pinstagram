@@ -18,7 +18,7 @@ define(['angular', 'jquery'], function(angular){
       }
     });	
 	
-    $scope.addBoard = function() {
+    $scope.addToBoard = function() {
       console.log("Hovered")
     };
    
