@@ -1,9 +1,8 @@
 <div>
   <h1>Search</h1>
   <ul>
-    <li ng-repeat="board in boards">
-      {{board.name}}
-      <a href="#" ng-click="loadThing(board.id, $event)">{{board.name}}</a>
+    <li ng-repeat="board in boards" isotope-item>
+      <div class="name">{{board.name}}</div>
     </li>
   </ul>
 </div>
