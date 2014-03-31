@@ -3,10 +3,10 @@
  *
  * @type {angular.Module}
  */
-define(['angular', 'angular-route', 'asset!libs/angular-isotope', 'asset!js/aerobatic-angular', 'asset!js/services/instagram'], function(angular) {
+define(['angular', 'angular-route', 'asset!libs/isotope.pkgd.min', 'asset!js/aerobatic-angular', 'asset!js/services/instagram'], function(angular) {
   'use strict';
 
-  var app = angular.module('nstagram', ['ngRoute', 'nstagram-services', 'aerobatic', 'iso.directives']);
+  var app = angular.module('nstagram', ['ngRoute', 'nstagram-services', 'aerobatic']);
 
   // Declare all the top level dependencies our app requires
   var dependencies = [
