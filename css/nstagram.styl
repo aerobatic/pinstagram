@@ -1,38 +1,76 @@
 *
-  border-radius: 0 !important;
+	border-radius: 0 !important;
+	outline: none;
+	box-shadow:none !important;
+
+button:focus
+	border-radius: 0 !important;
+	outline: none;
+	box-shadow:none !important;
+// input.form-control
+//   outline: none;
+//   box-shadow:none !important;
+
+.ig-item
+  max-width: 350px;
+  padding: 10px;
 
 .topbar
-  background-color: #88d1a5
-  height: 40px
+	background-color: #88d1a5
+	height: 40px
 
 .search-form
-  margin-top: 30px
+	margin-top: 30px
 
-  .input-group
-    width: 300px
-    margin-left: 8px
+	button
+		width: 40px
+		height: 40px
 
-    button
-      border-color: #88d1a5
-      border-width: 2px
-      border-left-width: 0
-      height: 40px
-      color: #88d1a5
+	.input-group
+		width: 300px
+		margin-left: 8px
 
-  input
-    border-color: #88d1a5
-    border-width: 2px
-    height: 40px
+		button
+			border-color: #88d1a5
+			border-width: 2px
+			border-left-width: 0
+			height: 40px
+			color: #88d1a5
 
-  input:focus
-    border-color: #88d1a5
+	input
+		border-color: #88d1a5
+		border-width: 2px
+		height: 40px
 
-  button.search-type
-    background-color: gray
-    width: 40px
-    height: 40px
+	input:focus
+		border-color: #88d1a5
 
-  button.search-type.active
-    background-color: #88d1a5
+	button.search-type
+		background-color: gray
 
+	button.search-type.active
+		background-color: #88d1a5
 
+	.city-select
+		width: 300px
+
+		button.city
+			width: 253px
+			text-align: left
+			margin-left: 8px
+			border: solid 2px #88d1a5
+
+		button.city:hover
+			background-color: #FFF
+			border: solid 2px #88d1a5
+
+		button.dropdown-toggle
+			border: solid 2px #88d1a5
+			border-left-width: 0
+
+		button.dropdown-toggle:active
+			background-color: #FFF
+
+.navbar
+	p.username
+		margin-top: 30px
