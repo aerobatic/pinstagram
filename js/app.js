@@ -3,7 +3,7 @@
  *
  * @type {angular.Module}
  */
-define(['angular', 'angular-route', 'asset!js/aerobatic-angular', 'asset!js/services/instagram'], function(angular) {
+define(['angular', 'angular-route', 'asset!js/aerobatic-angular', 'asset!js/services/instagram', 'asset!js/services/repository'], function(angular) {
   'use strict';
 
   var app = angular.module('nstagram', ['ngRoute', 'nstagram-services', 'aerobatic']);
@@ -15,19 +15,21 @@ define(['angular', 'angular-route', 'asset!js/aerobatic-angular', 'asset!js/serv
     'asset!js/controllers/searchCtrl',
     'asset!partials/search',
     'asset!js/controllers/detailCtrl',
-    'asset!partials/detail'
+    'asset!partials/detail',
+    'asset!js/controllers/boardListCtrl',
+    'asset!partials/boards'
   ];
 
-  require(dependencies, function(globalCtrl, layout, searchCtrl, searchView, detailCtrl, detailView) {
+  require(dependencies, function(globalCtrl, layout, searchCtrl, searchView, detailCtrl, detailView, boardListCtrl, boardsView) {
     app.controller('GlobalCtrl', globalCtrl);
 
     app.config(['$routeProvider', function ($routeProvider) {
       $routeProvider.when('/', {
         controller: searchCtrl,
         template: searchView
-      }).when('/:id', {
-        controller: detailCtrl,
-        template: detailView
+      }).when('/boards', {
+        controller: boardListCtrl,
+        template: boardsView
       }).otherwise({
         redirectTo: '/'
       });

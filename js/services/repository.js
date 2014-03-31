@@ -9,7 +9,7 @@ define(['angular'], function(angular) {
     localStorage.setItem(foo + i, testData);
   }
 
-  angular.module('nstagram-services', []).factory('BoardRepo', function() {
+  angular.module('nstagram-services').factory('BoardRepo', function() {
     return {
       get: function (boardName){
         return JSON.parse(localStorage.getItem(boardName) || '[]'); 
