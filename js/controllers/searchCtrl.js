@@ -14,11 +14,11 @@ define(['angular', 'jquery'], function(angular){
 			$scope.currentMedia = data.data;
 		})
 	  }
-	  else if (args.type == 'geo'){
-		instagram.geoMedia(args.term).success(function(data) {			
-			$scope.currentMedia = data.data;
+      else if (args.type == 'geo'){
+        instagram.geoMedia(args.term).success(function(data) {
+           $scope.currentMedia = data.data;
 		})
-	  }
+      }
     });	
 	
     $scope.addBoard = function() {
