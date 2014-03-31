@@ -16,7 +16,7 @@ define(['angular'], function(angular) {
         return $http.jsonp("https://api.instagram.com/v1/media/popular", {params: params});
       },
       hashtagMedia: function(hashtag) {
-        return $http.jsonp("https://api.instagram.com/v1/media/" + hashtag, {params: params});
+        return $http.jsonp("https://api.instagram.com/v1/tags/" + hashtag + "/media/recent", {params: params});
       }
     }
   }]);
