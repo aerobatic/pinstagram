@@ -1,5 +1,4 @@
 define(['angular', 'jquery', 'jquery-isotope'], function(angular){
-
   function SearchCtrl($scope, $location, instagram) {
     'use strict';
 
