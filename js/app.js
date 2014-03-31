@@ -6,7 +6,7 @@
 define(['angular', 'angular-route', 'asset!js/aerobatic-angular', 'asset!js/services/thing', 'asset!bower_components/angular-isotope/dist/angular-isotope'], function(angular) {
   'use strict';
 
-  var app = angular.module('angular-seed', ['ngRoute', 'seedServices', 'aerobatic']);
+  var app = angular.module('angular-seed', ['ngRoute', 'seedServices', 'aerobatic', 'iso.directives']);
 
   // Declare all the top level dependencies our app requires
   var dependencies = [
