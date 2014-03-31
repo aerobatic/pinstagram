@@ -18,6 +18,11 @@ define(['angular'], function(angular) {
       hashtagMedia: function(hashtag) {
         return $http.jsonp("https://api.instagram.com/v1/tags/" + hashtag + "/media/recent", {params: params});
       }
+      geoMedia: function(city) {
+	    // coords = {"Seattle": {lat: 47.60 , long: -122.33}};
+		// searchCoords = coordinates[city];
+        return $http.jsonp("https://api.instagram.com/v1/media/search?lat=" + searchCoords.lat + "&lng=" + searchCoords.lon + "&access_token=ACCESS-TOKEN", {params: params});
+      }	  
     }
   }]);
 });

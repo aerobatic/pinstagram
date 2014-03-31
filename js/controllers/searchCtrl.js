@@ -14,11 +14,17 @@ define(['angular', 'jquery', 'jquery-isotope'], function(angular){
       layoutMode: 'fitRows'
     });
 
-	$scope.hashtagSearch = function(hashtag) {
-		instagram.hashtagMedia(hashtag).success(function(data) {
-		  $scope.hashtagMedia = data.data;
-		});
+    $scope.hashtagSearch = function(hashtag) {
+        instagram.hashtagMedia(hashtag).success(function(data) {
+        $scope.hashtagMedia = data.data;
+        });
     };
+	
+    $scope.geoSearch = function(hashtag) {
+        instagram.hashtagMedia(hashtag).success(function(data) {
+        $scope.hashtagMedia = data.data;
+        });
+    };	
 	
   };
 
