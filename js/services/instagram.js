@@ -20,9 +20,13 @@ define(['angular'], function(angular) {
 		return $http.jsonp("https://api.instagram.com/v1/tags/" + hashtag + "/media/recent", {params: params});
       },
       geoMedia: function(city) {
-	    // coords = {"Seattle": {lat: 47.60 , long: -122.33}};
-		// searchCoords = coordinates[city];
-        return $http.jsonp("https://api.instagram.com/v1/media/search?lat=" + searchCoords.lat + "&lng=" + searchCoords.lon + "&access_token=ACCESS-TOKEN", {params: params});
+	    // our supported cities
+		var coords = {"Seattle":       {lat: 47.60 , lon: -122.33},
+		              "San Francisco": {lat: 37.77 , lon: -122.41},
+					  "New York":      {lat: 40.71 , lon: -74.00}};
+		var cityCoords = coords[city];
+        return $http.jsonp("https://api.instagram.com/v1/media/search?lat=" + cityCoords.lat + "&lng=" + cityCoords.lon + "&access_token=ACCESS-TOKEN", 
+		                   {params: params});
       }	  
     }
   }]);
