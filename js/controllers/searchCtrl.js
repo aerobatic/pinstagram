@@ -3,7 +3,7 @@ define(['angular', 'jquery'], function(angular){
     'use strict';
 
     instagram.popularMedia().success(function(data) {
-      $scope.currentMedia = data.data;
+      $scope.popularMedia = data.data;
     });
 
     $scope.$on('search', function(e, args){
@@ -21,6 +21,10 @@ define(['angular', 'jquery'], function(angular){
 	  }
     });	
 	
+    $scope.addBoard = function() {
+      console.log("Hovered")
+    };
+   
   };
 
   SearchCtrl.$inject = ['$scope', '$location', '$log', 'instagram'];
