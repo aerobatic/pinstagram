@@ -3,13 +3,14 @@
  *
  * @type {angular.Module}
  */
-define(['angular', 'angular-route', 'asset!libs/angular-isotope', 'asset!js/aerobatic-angular', 'asset!js/services/instagram'], function(angular) {
+define(['angular', 'angular-route', 'asset!js/aerobatic-angular', 'asset!js/services/instagram'], function(angular) {
   'use strict';
 
-  var app = angular.module('nstagram', ['ngRoute', 'nstagram-services', 'aerobatic', 'iso.directives']);
+  var app = angular.module('nstagram', ['ngRoute', 'nstagram-services', 'aerobatic']);
 
   // Declare all the top level dependencies our app requires
   var dependencies = [
+    'asset!js/controllers/globalCtrl',
     'asset!partials/layout',
     'asset!js/controllers/searchCtrl',
     'asset!partials/search',
@@ -17,7 +18,9 @@ define(['angular', 'angular-route', 'asset!libs/angular-isotope', 'asset!js/aero
     'asset!partials/detail'
   ];
 
-  require(dependencies, function(layout, searchCtrl, searchView, detailCtrl, detailView) {
+  require(dependencies, function(globalCtrl, layout, searchCtrl, searchView, detailCtrl, detailView) {
+    app.controller('GlobalCtrl', globalCtrl);
+
     app.config(['$routeProvider', function ($routeProvider) {
       $routeProvider.when('/', {
         controller: searchCtrl,
