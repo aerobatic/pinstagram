@@ -1,9 +1,8 @@
 <div>
   <h1>Popular Media</h1>
   <div id="container">
-    <div ng-repeat="media in popularMedia" class="item">
-      ITEM
-      <img ng-src="{{media.images.thumbnail.url}}"/>
-    </div>
+      <div ng-repeat="media in popularMedia" class="item img-responsive">
+        <img ng-src="{{media.images.standard_resolution.url}}"/>
+      </div>
   </div>
 </div>

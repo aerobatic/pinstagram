@@ -1,5 +1,5 @@
 
-define(['angular', 'jquery', 'jquery-isotope'], function(angular){
+define(['angular', 'jquery', 'jquery-masonry'], function(angular){
   function SearchCtrl($scope, $location, instagram) {
     'use strict';
 
@@ -7,13 +7,11 @@ define(['angular', 'jquery', 'jquery-isotope'], function(angular){
       $scope.popularMedia = data.data;
     });
 
-
     $scope.$watch($scope.popularMedia, function() {
-      var $container = $('#container');
-      $container.imagesLoaded( function() {
-          // initialize
-          $container.masonry({
-          columnWidth: 200,
+      $('#container').imagesLoaded( function() {
+        console.log('all images are loaded');
+        $('#container').masonry({
+          // options
           itemSelector: '.item'
         });
       });
