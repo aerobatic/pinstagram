@@ -14,6 +14,9 @@
     },
     "angular-bootstrap": {
       "deps": ["angular"]
+    },
+    "moment": {
+      "exports": "moment"
     }
   },
   "paths": {
@@ -21,7 +24,8 @@
     "angular-route": ["//ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min"],
     "angular-bootstrap": ["//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min"],
     "jquery": ["//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min"],
-    "jquery-isotope": ["//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/1.5.25/jquery.isotope.min"]
+    "jquery-isotope": ["//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/1.5.25/jquery.isotope.min"],
+    "moment": ["//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min"]
   },
   "mainModules": {
     "index": "js/app",
