@@ -23,7 +23,8 @@ define(['angular'], function(angular) {
         // our supported cities
         var coords = {"Seattle":       {lat: 47.60 , lon: -122.33},
                       "San Francisco": {lat: 37.77 , lon: -122.41},
-                      "New York":      {lat: 40.71 , lon: -74.00}};
+                      "New York":      {lat: 40.71 , lon: -74.00},
+					  "Miami":         {lat: 25.78 , lon: -80.22}};
         var cityCoords = coords[city];
         return $http.jsonp("https://api.instagram.com/v1/media/search?lat=" + cityCoords.lat + "&lng=" + cityCoords.lon + "&access_token=ACCESS-TOKEN", 
                           {params: params});

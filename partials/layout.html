@@ -19,7 +19,10 @@
           </button>
           <div class="form-group">
             <div class="btn-group city-select" ng-show="searchType=='geo'">
-              <button type="button" class="btn btn-default city">{{searchCity}}</button>
+			  <select ng-model="city" ng-options="c.name for c in cities" ng-change="executeSearch()"></select>
+
+			  <!--
+			  <button type="button" class="btn btn-default city">{{searchCity}}</button>
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                 <span class="caret"></span>
                 <span class="sr-only">Toggle Dropdown</span>
@@ -31,6 +34,7 @@
                 <li><a href="#">San Francisco</a></li>
                 <li><a href="#">Miami</a></li>
               </ul>
+              -->
             </div>
             <div class="input-group" ng-show="searchType=='hashtag'">
               <input type="text" class="form-control" ng-model="searchTerm" placeholder="{{searchType=='hashtag' ? 'search by hashtag' : 'search by geotag'}}">
