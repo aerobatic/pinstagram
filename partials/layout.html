@@ -6,14 +6,18 @@
 
   <div class="navbar navbar-default navbar-fixed-top" role="navigation", ng-controller="GlobalCtrl">
     <div class="topbar"></div>
-    <div class="navbar-inner">
+    <div class="container navbar-inner">
       <div class="col-md-4">
         <img src="https://dl.dropboxusercontent.com/u/7446385/nstagram/nstagram_logo.png" width="300" height="73" class="logo" />
       </div>
       <div class="col-md-4">
         <form class="form-inline search-form" ng-submit="executeSearch()">
-          <button type="button" class="btn btn-default search-type" ng-class="{active:searchType=='geo'}" ng-click="searchType='geo'">Geo</button>
-          <button type="button" class="btn btn-default search-type" ng-class="{active:searchType=='hashtag'}" ng-click="searchType='hashtag'">Hashtag</button>
+          <button type="button" class="btn btn-default search-type" ng-class="{active:searchType=='geo'}" ng-click="searchType='geo'">
+            <img src="https://dl.dropboxusercontent.com/u/7446385/nstagram/nstagram_icon_geotag.png" />
+          </button>
+          <button type="button" class="btn btn-default search-type" ng-class="{active:searchType=='hashtag'}" ng-click="searchType='hashtag'">
+            <img src="https://dl.dropboxusercontent.com/u/7446385/nstagram/nstagram_icon_hashtag.png" />
+          </button>
           <div class="form-group">
             <div class="btn-group city-select" ng-show="searchType=='geo'">
               <button type="button" class="btn btn-default city">{{searchCity}}</button>
@@ -44,13 +48,18 @@
       <div class="col-md-4">
         <div class="nav pull-right profile">
           <p class="lead username">Logged in as {{username}}</p>
-          <button class="dropdown-toggle">
-            <img class="profile-photo dropdown-toggle" ng-src="{{profilePicture}}" />
+          <div class="menu-links">
+            <a href="#" ng-click="viewMyBoards($event)">My Boards</a>&nbsp;|&nbsp;<a href="/login">Logout</a>
+          </div>
+          <!-- <div class="dropdown">
+            <button class="dropdown-toggle">
+              <img class="profile-photo dropdown-toggle" ng-src="{{profilePicture}}" />
+            </button>
             <ul class="dropdown-menu" role="menu">
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#" ng-click="location.path('boards')">My Boards</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="/login">Logout</a></li>
             </ul>
-          </div>
+           </div>-->
         </div>
       </div>
     </div>

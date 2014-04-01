@@ -2,7 +2,7 @@ define(['angular'], function(angular) {
   'use strict';
 
   var get = function (boardName){
-    return JSON.parse(localStorage.getItem(boardName) || '[]'); 
+    return JSON.parse(localStorage.getItem(boardName) || '[]');
   }
 
   var save = function (board){
@@ -22,11 +22,13 @@ define(['angular'], function(angular) {
     var boards = [];
     var board;
     for(var key in localStorage){
+      var board = {
+        name: key
+      };
+      if (get(key).media.length > 0)
+        board.url = get(key).media[0].thumbnail_url;
 
-      boards.push({
-        name: key,
-        url: get(key).media[0].thumbnail_url
-      });
+      boards.push(board);
     }
 
     return boards;
