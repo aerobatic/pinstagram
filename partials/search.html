@@ -4,20 +4,28 @@
       <div class="ig-item-container">
         <img ng-src="{{media.images.standard_resolution.url}}" class="ig-item-img" ng-mouseover="hoverBoard(media)" ngram-add-board="media.id"/>
          <div class="ig-item-info" ng-show="hoveredMedia.id == media.id">
-          <div class="col-md-3">
+          <div class="col-md-2">
             <img ng-src="{{ media.user.profile_picture }}" class="ig-item-user-img"/>
           </div>
-          <div class="col-md-8">
-             {{ media.user.username }} <i class="fa fa-heart"></i> {{ media.likes.count }} 
-            <i class="fa fa-clock-o"></i>{{timeAgo}}
-            <select ng-model="selectedBoard" ng-options="board.name for board in boards">
-              <option value="">-- Add to Board --</option>
-            </select>
-            <button ng-click="addToBoard(selectedBoard.name,hoveredMedia)">Add</button>
+          <div class="col-md-10">
+            <div class="pull-left ig-username">
+             {{ media.user.username }}
+            </div>
+            <div class="pull-right ig-photo-stats">
+              <i class="fa fa-heart"></i>{{ media.likes.count }}&nbsp;&nbsp;
+              <i class="fa fa-clock-o"></i> {{timeAgo}}
+            </div>
+            <div class="row">
+              <div class="col-md-10">
+                <select ng-model="selectedBoard" ng-options="board.name for board in boards">
+                  <option value="">Add to Board</option>
+                </select>
+                <button class="add-btn" ng-click="addToBoard(selectedBoard.name,hoveredMedia)">Add</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <br ng-show="(index+1)%3==0"/>
     </span>
   </div>
 </div>
