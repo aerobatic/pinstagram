@@ -7,10 +7,10 @@ define(['angular', 'moment', 'jquery','angular-bootstrap'], function(angular,mom
 
     $scope.selectedBoard = undefined;
     $scope.boards = BoardRepo.list();
-    $log.debug("got boards: " + JSON.stringify($scope.boards));
+    // $log.debug("got boards: " + JSON.stringify($scope.boards));
 
 		$scope.$on('search', function(e, args) {
-			$log.info("Search for hashtag " + args.term);
+			// $log.info("Search for hashtag " + args.term);
 
 			if (args.type == 'hashtag') {
 				instagram.hashtagMedia(args.term).success(function(data) {
@@ -20,6 +20,7 @@ define(['angular', 'moment', 'jquery','angular-bootstrap'], function(angular,mom
 			}
 			else if (args.type == 'geo'){
 				instagram.geoMedia(args.term).success(function(data) {
+				    $log.info("Search for geo " + args.term);
 					$scope.currentMedia = data.data;
 				});
 			}
@@ -28,7 +29,7 @@ define(['angular', 'moment', 'jquery','angular-bootstrap'], function(angular,mom
     $scope.hoverBoard = function(media) {
       // $log.debug("hovered over " + JSON.stringify(media));
       $scope.hoveredMedia = media;
-      $log.debug("media: " + JSON.stringify(media));
+      $// log.debug("media: " + JSON.stringify(media));
 	  // created_time is in seconds
       $scope.timeAgo = moment(new Date(media.created_time * 1000)).fromNow();
     };
