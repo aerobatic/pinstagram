@@ -28,8 +28,9 @@ define(['angular', 'moment', 'jquery','angular-bootstrap'], function(angular,mom
     $scope.hoverBoard = function(media) {
       // $log.debug("hovered over " + JSON.stringify(media));
       $scope.hoveredMedia = media;
-      // $log.debug("media: " + JSON.stringify(media));
-      $scope.timeAgo = moment(media.created_time, "S").fromNow();
+      $log.debug("media: " + JSON.stringify(media));
+	  // created_time is in seconds
+      $scope.timeAgo = moment(new Date(media.created_time * 1000)).fromNow();
     };
 
     $scope.clearHovered = function () {

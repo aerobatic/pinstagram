@@ -10,7 +10,13 @@ define(['angular', 'angular-bootstrap'], function(angular){
     $scope.searchCity = 'New York';
 
     $scope.executeSearch = function() {
+      $location.path('/');
       $rootScope.$broadcast('search', {type: $scope.searchType, term: $scope.searchTerm});
+    }
+
+    $scope.viewMyBoards = function($event) {
+      $location.path('/boards');
+      $event.preventDefault();
     }
   };
 
