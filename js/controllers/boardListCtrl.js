@@ -33,6 +33,7 @@ define(['angular'], function(angular){
         $scope.newBoardName = null;
         updateBoardModel();
       }
+      $scope.newBoardMode = false;
     };
 
     $scope.boardColumns = splitBoardsIntoColumns();
