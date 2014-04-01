@@ -28,6 +28,11 @@ define(['angular', 'angular-bootstrap'], function(angular){
       $location.path('/boards');
       $event.preventDefault();
     }
+
+    $scope.goHome = function($event) {
+      $location.path('/');
+      $event.preventDefault();
+    }
   };
 
   GlobalCtrl.$inject = ['$scope', '$rootScope', '$location', 'aerobatic'];
