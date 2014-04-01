@@ -30,6 +30,9 @@ define(['angular', 'angular-route', 'asset!js/aerobatic-angular', 'asset!js/serv
       }).when('/boards', {
         controller: boardListCtrl,
         template: boardsView
+      }).when('/details/:name', {
+        controller: detailCtrl,
+        template: detailView
       }).otherwise({
         redirectTo: '/'
       });

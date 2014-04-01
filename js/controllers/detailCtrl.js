@@ -1,12 +1,10 @@
 
 define(['angular'], function(angular){
-  function DetailCtrl($scope, $routeParams, Thing) {
+  function DetailCtrl($scope, $routeParams, BoardRepo) {
     'use strict';
-
-    var thingId = $routeParams.id;
-    $scope.thing = Thing.find(thingId);
+    $scope.media = BoardRepo.get($routeParams.name).media;
   };
 
-  DetailCtrl.$inject = ['$scope', '$routeParams', 'Thing'];
+  DetailCtrl.$inject = ['$scope', '$routeParams', 'BoardRepo'];
   return DetailCtrl;
 });

@@ -1,6 +1,7 @@
-<div>
-  <div>
-    <a href="#" ng-click="location.path('/')">Back</a>
-  </div>
-  <h1>{{thing.name}}</div>
+<div id="search-results">
+  <div class="container" id="main">
+    <span ng-repeat="m in media">
+      <div class="ig-item-container">
+        <img ng-src="{{m.thumbnail_url}}" class="ig-item-img"/>
+    </div>
 </div>

@@ -18,19 +18,19 @@
   <div class="row">
     <div class="col-md-4">
       <div class="board-item" ng-repeat="board in boardColumns[0]">
-        <img ng-src="{{board.url}}" />
+        <a href="#/details/{{board.name}}"><img ng-src="{{board.url}}" /></a>
         <div class="title">{{board.name}}<span class="pull-right" ng-click="removeBoard(board)" style="cursor: pointer;">X<span></div>
       </div>
     </div>
     <div class="col-md-4">
       <div class="board-item" ng-repeat="board in boardColumns[1]">
-        <img ng-src="{{board.url}}" />
+        <a href="#/details/{{board.name}}"><img ng-src="{{board.url}}" /></a>
         <div class="title">{{board.name}}<span class="pull-right" ng-click="removeBoard(board)" style="cursor: pointer;">X<span></div>
       </div>
     </div>
     <div class="col-md-4">
       <div class="board-item" ng-repeat="board in boardColumns[2]">
-        <img ng-src="{{board.url}}" />
+        <a href="#/details/{{board.name}}"><img ng-src="{{board.url}}" /></a>
         <div class="title">{{board.name}}<span class="pull-right" ng-click="removeBoard(board)" style="cursor: pointer;">X<span></div>
       </div>
     </div>
