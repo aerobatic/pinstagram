@@ -27,6 +27,8 @@ define(['angular'], function(angular) {
       };
       if (get(key).media.length > 0)
         board.url = get(key).media[0].thumbnail_url;
+      else
+        board.url = "https://dl.dropboxusercontent.com/u/7446385/nstagram/nstagram_board_bg.png";
 
       boards.push(board);
     }
