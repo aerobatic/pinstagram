@@ -1,7 +1,7 @@
 define(['angular', 'moment', 'jquery','angular-bootstrap'], function(angular,moment) {
 	function SearchCtrl($scope, $location, $log, instagram, BoardRepo) {
 		'use strict';
-    instagram.popularMedia().success(function(data) {
+    instagram.hashtagMedia('nordstrom').success(function(data) {
       $scope.currentMedia = data.data;
     });
 
