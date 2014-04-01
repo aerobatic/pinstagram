@@ -1,8 +1,4 @@
 <div>
-<style type="text/css">
-
-</style>
-
   <div class="row">
     <div class="col-md-6">
       <div class="h2">my boards ({{boards.length}})</div>
@@ -23,26 +19,20 @@
     <div class="col-md-4">
       <div class="board-item" ng-repeat="board in boardColumns[0]">
         <img ng-src="{{board.url}}" />
-        <div class="title">{{board.name}}</div>
+        <div class="title">{{board.name}}<span class="pull-right" ng-click="removeBoard(board)" style="cursor: pointer;">X<span></div>
       </div>
     </div>
     <div class="col-md-4">
       <div class="board-item" ng-repeat="board in boardColumns[1]">
         <img ng-src="{{board.url}}" />
-        <div class="title">{{board.name}}</div>
+        <div class="title">{{board.name}}<span class="pull-right" ng-click="removeBoard(board)" style="cursor: pointer;">X<span></div>
       </div>
     </div>
     <div class="col-md-4">
       <div class="board-item" ng-repeat="board in boardColumns[2]">
         <img ng-src="{{board.url}}" />
-        <div class="title">{{board.name}}</div>
+        <div class="title">{{board.name}}<span class="pull-right" ng-click="removeBoard(board)" style="cursor: pointer;">X<span></div>
       </div>
     </div>
   </div>
-
-  <!-- <span ng:repeat="board in boards">
-    <div class="ig-item">
-      <img ng-src="{{board.url}}" class="ig-item" />
-    </div>
-  </span> -->
 </div>

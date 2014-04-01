@@ -15,7 +15,7 @@ define(['angular'], function(angular) {
   }
 
   var remove = function(boardName){
-    localStorage.removeItem('itemA')
+    localStorage.removeItem(boardName)
   }
 
   var list = function(){
@@ -35,18 +35,7 @@ define(['angular'], function(angular) {
 
     return boards;
   }
-
-  var testData = {
-      "name":"Kate Spade",
-      "media": [{
-        "thumbnail_url":"http://distilleryimage4.s3.amazonaws.com/d172ce80b90a11e39889127781d381c8_8.jpg"
-      },
-      {
-        "thumbnail_url":"http://distilleryimage4.s3.amazonaws.com/d172ce80b90a11e39889127781d381c8_8.jpg"
-      }]
-  };
-  save(testData)
-
+  
   angular.module('nstagram-services').factory('BoardRepo', function() {
     return {
       get: get,

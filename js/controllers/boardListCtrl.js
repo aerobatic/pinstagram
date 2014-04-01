@@ -17,6 +17,11 @@ define(['angular'], function(angular){
       return columns;
     }
 
+    function updateBoardModel(){
+      $scope.boards = BoardRepo.list();
+      $scope.boardColumns = splitBoardsIntoColumns();
+    }
+
     $scope.newBoardName = null;
     $scope.saveBoard = function() {
       if ($scope.newBoardName.length > 0) {
@@ -26,12 +31,16 @@ define(['angular'], function(angular){
         };
         BoardRepo.save(board);
         $scope.newBoardName = null;
-        $scope.boards = BoardRepo.list();
-        $scope.boardColumns = splitBoardsIntoColumns();
+        updateBoardModel();
       }
     };
 
     $scope.boardColumns = splitBoardsIntoColumns();
+
+    $scope.removeBoard = function(board){
+      BoardRepo.remove(board.name);
+      updateBoardModel();
+    };
   };
 
   BoardListCtrl.$inject = ['$scope', 'BoardRepo'];
