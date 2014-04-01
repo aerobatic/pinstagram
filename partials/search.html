@@ -5,9 +5,16 @@
         <img ng-src="{{media.images.standard_resolution.url}}" class="ig-item-img" ng-mouseover="hoverBoard(media)" ngram-add-board="media.id"/>
          <span class="ig-item-info" ng-show="hoveredMedia.id == media.id">
           <img ng-src="{{ media.user.profile_picture }}" class="ig-item-user-img"/> {{ media.user.username }} <i class="fa fa-heart"></i> {{ media.likes.count }} 
-          <i class="fa fa-clock-o"></i>{{timeAgo}}<br/>
+          <i class="fa fa-clock-o"></i>{{timeAgo}}
+
+          <select ng-model="selectedBoard" ng-options="board.name for board in boards">
+            <option value="">-- Add to Board --</option>
+          </select>
+          <button ng-click="addToBoard(selectedBoard.name,hoveredMedia)">Add</button>
+
         </span>
       </div>
+      <br ng-show="(index+1)%3==0"/>
     </span>
   </div>
 </div>

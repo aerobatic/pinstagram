@@ -5,6 +5,7 @@ define(['angular', 'moment', 'jquery','angular-bootstrap'], function(angular,mom
       $scope.currentMedia = data.data;
     });
 
+    $scope.selectedBoard = undefined;
     $scope.boards = BoardRepo.list();
     $log.debug("got boards: " + JSON.stringify($scope.boards));
 
@@ -27,12 +28,24 @@ define(['angular', 'moment', 'jquery','angular-bootstrap'], function(angular,mom
     $scope.hoverBoard = function(media) {
       // $log.debug("hovered over " + JSON.stringify(media));
       $scope.hoveredMedia = media;
-      $log.debug("media: " + JSON.stringify(media));
+      // $log.debug("media: " + JSON.stringify(media));
       $scope.timeAgo = moment(media.created_time, "S").fromNow();
     };
 
-    $scope.clearHovered = function (){
+    $scope.clearHovered = function () {
       $scope.hoveredMedia = undefined;
+    };
+
+    $scope.addToBoard = function(boardName,media) {
+      var board = BoardRepo.get(boardName);
+      var boardMedia = board.media;
+
+      var newMedia = {};
+      newMedia.thumbnail_url = media.images.thumbnail.url;
+      boardMedia.push(newMedia);
+      board.media = boardMedia;
+      BoardRepo.save(board);
+      $scope.boardSaveSuccess = true;
     }
   };
 
