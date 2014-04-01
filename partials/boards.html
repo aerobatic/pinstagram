@@ -1,11 +1,15 @@
 <div>
+<style type="text/css">
+
+</style>
+
   <div class="row">
     <div class="col-md-6">
-      <div class="h2">my boards</div>
+      <div class="h2">my boards ({{boards.length}})</div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6" style="margin-top:15px">
       <div class="pull-right">
-        <span ng-show="!newBoardMode" href="#" ng-click="newBoardMode=true">new board</span>
+        <span class="new-board" ng-show="!newBoardMode" href="#" ng-click="newBoardMode=true">+ new board</span>
         <form class="form-inline" ng-show="newBoardMode==true" ng-submit="saveBoard()">
           <input type="text" class="form-control" placeholder="Board Name" ng-model="newBoardName" />
           <button type="submit" ng-show="false" />
@@ -14,9 +18,31 @@
     </div>
   </div>
   <hr />
-  <span ng:repeat="board in boards">
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="board-item" ng-repeat="board in boardColumns[0]">
+        <img ng-src="{{board.url}}" />
+        <div class="title">{{board.name}}</div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="board-item" ng-repeat="board in boardColumns[1]">
+        <img ng-src="{{board.url}}" />
+        <div class="title">{{board.name}}</div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="board-item" ng-repeat="board in boardColumns[2]">
+        <img ng-src="{{board.url}}" />
+        <div class="title">{{board.name}}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <span ng:repeat="board in boards">
     <div class="ig-item">
       <img ng-src="{{board.url}}" class="ig-item" />
     </div>
-  </span>
+  </span> -->
 </div>
