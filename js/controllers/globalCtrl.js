@@ -8,10 +8,20 @@ define(['angular', 'angular-bootstrap'], function(angular){
     $scope.searchType = 'hashtag';
     $scope.searchTerm = '';
     $scope.searchCity = 'New York';
+	
+	$scope.cities = [{name: "Seattle"},{name: "New York"},{name: "San Francisco"},{name: "Miami"}];
 
     $scope.executeSearch = function() {
       $location.path('/');
-      $rootScope.$broadcast('search', {type: $scope.searchType, term: $scope.searchTerm});
+	  var term = "";
+	  if ($scope.searchType=="geo") {
+	     term = $scope.city.name;		 
+	   }
+	   else {
+	      term = $scope.searchTerm;
+	   }
+	  
+      $rootScope.$broadcast('search', {type: $scope.searchType, term: term});
     }
 
     $scope.viewMyBoards = function($event) {
