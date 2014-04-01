@@ -17,10 +17,9 @@
             </div>
             <div class="row">
               <div class="col-md-10">
-                <select ng-model="selectedBoard" ng-options="board.name for board in boards">
+                <select ng-model="selectedBoard" ng-options="board.name for board in boards" ng-change="addToBoard(selectedBoard.name,hoveredMedia)">
                   <option value="">Add to Board</option>
                 </select>
-                <button class="add-btn" ng-click="addToBoard(selectedBoard.name,hoveredMedia)">Add</button>
               </div>
             </div>
           </div>
